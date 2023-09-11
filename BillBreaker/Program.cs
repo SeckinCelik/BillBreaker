@@ -1,18 +1,29 @@
-﻿using BenchmarkDotNet.Running;
-
-namespace BillBreaker
+﻿namespace BillBreaker
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var bm = new BreakerBenchmark();
-            var result = bm.getPossibleCoins();
+            do
+            {
+                try
+                {
+                    System.Console.WriteLine("Enter a positive integer to get started");
+                    var count = System.Convert.ToInt32(System.Console.ReadLine());
+                    var coinBreaker = new CoinBreakerUtility();
+                    var result = coinBreaker.GetCoinPairs(count);
+                    System.Console.WriteLine(string.Format("Total Count:{0}", result.Count));
+                    System.Console.WriteLine(coinBreaker.Print(result));
+                    System.Console.WriteLine("****************************");
+                }
+                catch (System.Exception ex)
+                {
+                    System.Console.WriteLine(ex.Message);
+                }
+            } while (System.Console.ReadLine() != "q");
 
-            System.Console.WriteLine(bm.Print(result));
 
             System.Console.ReadKey();
-            //var summary = BenchmarkRunner.Run<BreakerBenchmark>();
         }
     }
 }

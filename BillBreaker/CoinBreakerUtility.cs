@@ -1,15 +1,11 @@
-﻿using BenchmarkDotNet.Attributes;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace BillBreaker
 {
-    [MemoryDiagnoser]
-    public class BreakerBenchmark
-    {
-        private int cents = 100;
-        [Benchmark]
-        public List<List<Coin>> getPossibleCoins()
+    public class CoinBreakerUtility
+    {        
+        public List<List<Coin>> GetCoinPairs(int cents)
         {
             int countOfCoinType25 = cents / (int)CoinType.Quarter;
             List<List<Coin>> allList = new List<List<Coin>>();
