@@ -167,7 +167,6 @@
     <Compile Include="Coin.cs" />
     <Compile Include="BreakerBenchmark.cs" />
     <Compile Include="CoinType.cs" />
-    <Compile Include="getWays.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
